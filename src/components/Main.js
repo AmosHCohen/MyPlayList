@@ -1,4 +1,8 @@
 import Search from "../pages/Search";
+import List from "../pages/List";
+import Login from "../pages/Login";
+import NotFound from "../pages/NotFound"
+import { Routes, Route } from 'react-router-dom'
 
 export default function Main() {
     return (
