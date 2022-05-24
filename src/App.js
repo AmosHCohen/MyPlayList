@@ -5,9 +5,7 @@ function App() {
   return (
     <div>
       <Header />
-      <amos>
 
-      </amos>
     </div>
 
   );
