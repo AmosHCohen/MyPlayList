@@ -1,10 +1,11 @@
+import './Header.css'
 import { Link } from 'react-router-dom';
 export default function Header() {
     return (
-        <div>
-            <Link to="/">Home</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/search">Search</Link>
+        <div id="header">
+            <span> <Link to="/">Home</Link></span>
+            <span> <Link to="/login">Login</Link></span>
+            <span> <Link to="/search">Search</Link></span>
         </div>
     )
 }
