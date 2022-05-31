@@ -1,25 +1,38 @@
-import { useState } from "react"
+import { useContext } from "react"
+import { UserContext } from "../context/UserContext"
+
+
 export default function Login() {
-    const [name, setName] = useState('')
-    const [password, setpassword] = useState('')
-    const onChange = (e) => {
-        const username = e.target.value
-        // const password = e.target.password
-        console.log(username);
+    const { user, setUser } = useContext(UserContext)
+    const defaultUser = {
+        ID: 1,
+        name: "user name",
+        playlist: ["1", "2"],
+        token: "2222"
     }
     const onSubmit = (e) => {
-        console.log("blabla");
+        e.preventDefault()
+        console.log(user)
+        const name = e.target.elements.username.value
+        const password = e.target.elements.password.value
+        if (name == "test" && password == "1") {
+            setUser(defaultUser)
+        } else {
+            console.log("wrong details");
+        }
     }
     return (
         <form onSubmit={onSubmit}>
             <label>
                 Username:
-                <input name="username" type="text" value={FormData.username} onChange={onChange} />
+                <input name="username" required type="text" />
             </label>
+            <br />
             <label>
                 Password:
-                <input name="password" type="password" value={FormData.password} onChange={onChange} />
+                <input name="password" required type="password" />
             </label>
+            <br />
             <input type="submit" value="Submit" />
         </form>
     )
