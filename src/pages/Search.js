@@ -1,7 +1,7 @@
 export default function Search() {
     return (
-        <search>
-
-        </search>
+        <div>
+            hi
+        </div>
     )
 }
