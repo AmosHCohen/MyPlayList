@@ -3,6 +3,7 @@ import List from "../pages/List";
 import Login from "../pages/Login";
 import NotFound from "../pages/NotFound"
 import { Routes, Route } from 'react-router-dom'
+import Song from "./Song";
 
 
 export default function Main() {
@@ -12,7 +13,9 @@ export default function Main() {
                 <Route path="/" element={<List />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/search" element={<Search />} />
+                <Route path="/song" element={<Song />} />
                 <Route path="*" element={<NotFound />} />
+
             </Routes>
         </div>
     )
