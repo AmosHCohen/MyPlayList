@@ -6,9 +6,9 @@ export default function SongPreview({ song }) {
     function handleClick(e) {
         e.preventDefault()
         console.log(e.target.value);
-        navigate('/song')
+        navigate(`/song?songId=${song.id}`)
     }
-    return <div value={song.url} onClick={handleClick}>
+    return <div onClick={handleClick}>
         <h4>{song.title}</h4>
         <img className='thumbnail' src={song.thumbnail.url} alt={song.title} />
     </div>
