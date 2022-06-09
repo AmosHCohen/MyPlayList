@@ -15,7 +15,6 @@ export default function Main() {
                 <Route path="/search" element={<Search />} />
                 <Route path="/song" element={<Song />} />
                 <Route path="*" element={<NotFound />} />
-
             </Routes>
         </div>
     )
