@@ -1,6 +1,7 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { UserContext } from "../context/UserContext"
 import { useNavigate } from "react-router-dom"
+import axios from "axios";
 
 
 
@@ -13,11 +14,20 @@ export default function Login() {
         playlist: ["1", "2"],
         token: "2222"
     }
+    function validateUser(username, password) {
+        axios.post(`http://localhost:3001/api/users/login`, { username, password })
+            .then(res => {
+                setUser(res);
+            })
+
+    }
+
     const onSubmit = (e) => {
         e.preventDefault()
-        const name = e.target.elements.username.value
+        const username = e.target.elements.username.value
         const password = e.target.elements.password.value
-        if (name == "test" && password == "1") {
+        validateUser(username, password)
+        if (user) {
             setUser(defaultUser)
             navigate("/")
         } else {
