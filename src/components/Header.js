@@ -6,6 +6,7 @@ export default function Header() {
             <span> <Link to="/">Home</Link></span>
             <span> <Link to="/login">Login</Link></span>
             <span> <Link to="/search">Search</Link></span>
+            <span> <Link to="/logout">Logout</Link></span>
         </div>
     )
 }

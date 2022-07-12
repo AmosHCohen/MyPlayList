@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Navigate } from "react-router-dom";
 import SongList from "../components/SongList";
-
+import { UserContext } from "../context/UserContext";
 export default function Search() {
-    // function onSubmit(e) {
+    const { user, setUser } = useContext(UserContext)
 
-    // }
     const options = {
         method: 'GET',
         headers: {
@@ -23,6 +23,10 @@ export default function Search() {
 
 
     }
+    if (!user) return (
+        <Navigate to="/login" />
+    )
+
     return (
         <div>
             <form onSubmit={getResults}>
