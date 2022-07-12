@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../context/UserContext"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import LoginError from "../components/LoginError";
 import axios from "axios";
+import Register from "./Register";
 
 
 
@@ -52,6 +53,8 @@ export default function Login() {
             </form>
             <div>{loginError && <LoginError />}
             </div>
+            <span> <Link to="/register">New user?</Link></span>
+
         </div>
 
     )
