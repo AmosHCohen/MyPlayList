@@ -1,19 +1,28 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 export default function Register() {
+    const { user, setUser } = useContext(UserContext)
+    let navigate = useNavigate();
+
     const firstName = useRef()
     const lastName = useRef()
     const email = useRef()
     const password = useRef()
     function sendData(user) {
-        axios.post(`http://localhost:3001/api/users/register`, user)
+        return axios.post(`http://localhost:3001/api/users/register`, user)
             .then(res => {
                 console.log("feedback from the server ", res);
+                localStorage.userToken = JSON.stringify(res.data)
+            }).catch(e => {
+                console.log(e)
+                // setLoginError("error")
             })
 
     }
-    function onSubmit(e) {
+    async function onSubmit(e) {
         e.preventDefault()
         const user = {
             firstName: firstName.current.value,
@@ -21,8 +30,13 @@ export default function Register() {
             email: email.current.value,
             password: password.current.value
         }
-        sendData(user)
+        await sendData(user)
         console.log("data sent to the server ", user);
+        if (localStorage.userToken) {
+            setUser(JSON.parse(localStorage.userToken));
+            console.log("I was registered");
+            navigate("/")
+        }
     }
     return <form onSubmit={onSubmit}>
         <label>

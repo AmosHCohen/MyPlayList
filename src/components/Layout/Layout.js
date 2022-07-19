@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { UserContext } from "../context/UserContext";
-import Header from "./Header";
-import Main from "./Main";
+import { UserContext } from "../../context/UserContext";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
 
 export default function Layout() {
     const [user, setUser] = useState()

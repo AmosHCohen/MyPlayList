@@ -1,11 +1,11 @@
-import Search from "../pages/Search";
-import List from "../pages/List";
-import Login from "../pages/Login";
-import NotFound from "../pages/NotFound"
+import Search from "../../pages/Search";
+import List from "../../pages/List";
+import Login from "../../pages/Login";
+import NotFound from "../../pages/NotFound"
 import { Routes, Route } from 'react-router-dom'
-import Song from "./Song";
-import Register from "../pages/Register";
-import Logout from "../pages/Logout";
+import Song from "../Song/Song"
+import Register from "../../pages/Register";
+import Logout from "../../pages/Logout";
 
 
 export default function Main() {

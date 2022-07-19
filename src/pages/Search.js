@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
-import SongList from "../components/SongList";
+import SongList from '../components/SongList/SongList'
 import { UserContext } from "../context/UserContext";
 export default function Search() {
     const { user, setUser } = useContext(UserContext)

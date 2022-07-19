@@ -1,4 +1,4 @@
-import SongPreview from "./SongPreview"
+import SongPreview from "../SongPreview/SongPreview"
 
 export default function SongList({ results }) {
     if (!results) return <div></div>
