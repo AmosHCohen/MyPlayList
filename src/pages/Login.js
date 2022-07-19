@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from "../context/UserContext"
 import { Link, useNavigate } from "react-router-dom"
-import LoginError from "../components/LoginError";
+import LoginError from "../components/LoginError/LoginError";
 import axios from "axios";
-import Register from "./Register";
 
 
 
@@ -17,9 +16,6 @@ export default function Login() {
         navigate("/")
 
     }
-    useEffect(() => {
-        if (localStorage.userToken) validatedUser()
-    }, [])
 
     const onSubmit = (e) => {
         e.preventDefault()
